@@ -142,7 +142,8 @@ class ProductController extends Controller
             $this->proPrecio = $datos->proPrecio;
             $this->category_id = $datos->category_id;
             $this->proDescripcion = $datos->proDescripcion;
-            $this->proImagen = $datos->proImagen;
+            $file = file($datos->proImagen);
+            $this->proImagen = base64_encode($file);
 
             $_product->proCodigo = $this->proCodigo;
             $_product->proNombre = $this->proNombre;
