@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:sanctum')->group(function () {
+// Route::middleware('auth:sanctum')->group(function () {
     // ----------- RUTAS CRUD USERS ----------------
     Route::get('/', UserController::class);
     Route::controller(UserController::class)->group(function () {
@@ -58,7 +58,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('category/{opcion}', 'index');
         Route::patch('category/{opcion}', 'index');
     });
-});
+// });
 
 // ----------- RUTA LOGIN ----------------
 Route::post('auth', [AuthController::class, 'login']);

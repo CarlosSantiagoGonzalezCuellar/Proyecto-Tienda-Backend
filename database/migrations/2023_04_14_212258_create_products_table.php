@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories')
                     ->onDelete('set null');
             $table->text('proDescripcion');
-            $table->string('proImagen');
+            $table->text('proImagen');
             $table->softDeletes();
             $table->timestamps();
         });
